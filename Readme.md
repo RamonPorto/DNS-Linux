@@ -16,6 +16,36 @@ El segundo paso de la práctica sería comrpobar el estado de nuestro servicio. 
 sudo systemctl status bind9
 ~~~
 
+El resultado se mostrará de la siguiente manera
+
+``` console
+● named.service - BIND Domain Name Server
+     Loaded: loaded (/lib/systemd/system/named.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-11-07 15:42:15 CET; 1h 5min ago
+       Docs: man:named(8)
+    Process: 694 ExecStart=/usr/sbin/named $OPTIONS (code=exited, status=0/SUCCESS)
+   Main PID: 716 (named)
+      Tasks: 6 (limit: 4484)
+     Memory: 11.5M
+        CPU: 105ms
+     CGroup: /system.slice/named.service
+             └─716 /usr/sbin/named -u bind
+
+nov 07 16:14:59 usuario-VirtualBox named[716]: none:99: 'max-cache-size 90%' - setting to 3430MB (out of 3811MB)
+nov 07 16:14:59 usuario-VirtualBox named[716]: obtaining root key for view _default from '/etc/bind/bind.keys'
+nov 07 16:14:59 usuario-VirtualBox named[716]: configuring command channel from '/etc/bind/rndc.key'
+nov 07 16:14:59 usuario-VirtualBox named[716]: configuring command channel from '/etc/bind/rndc.key'
+nov 07 16:14:59 usuario-VirtualBox named[716]: managed-keys-zone: Unable to fetch DNSKEY set '.': operation canceled
+nov 07 16:14:59 usuario-VirtualBox named[716]: reloading configuration succeeded
+nov 07 16:15:00 usuario-VirtualBox named[716]: scheduled loading new zones
+nov 07 16:15:00 usuario-VirtualBox named[716]: any newly configured zones are now loaded
+nov 07 16:15:00 usuario-VirtualBox named[716]: running
+nov 07 16:15:00 usuario-VirtualBox named[716]: managed-keys-zone: Key 20326 for zone . is now trusted (acceptance timer complete)
+
+
+
+```
+
 ## 3. Tercer paso
 
 El siguiente paso es copiar los ficheros de configuración de la anterior práctica a esta. En este caso copiaremos los 3 ficheros *named.conf* en el directorio ***/etc/bind*** y el archivo *db.asircastelao.int* en el directorio ***/var/lib/bind***
