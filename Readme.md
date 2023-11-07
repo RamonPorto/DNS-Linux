@@ -1,4 +1,4 @@
-Práctica 1.2 - DNS Linux
+# Práctica 1.2 - DNS Linux
 
 1. Primer paso
 
