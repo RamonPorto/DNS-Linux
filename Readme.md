@@ -61,3 +61,15 @@ dig @10.0.2.15 www.asircastelao.int
 ~~~
 
 **Siendo 10.0.2.15 la ip de la máquina virtual que actua como servidor de DNS.*
+
+## 5. Quinto paso
+
+Ahora comprobaremos que funciona correctamente comprobando desde el host, fuera de la máquina virtual. Para ello debemos acceder a los adaptadores de red de la máquina virtual y añadir uno nuevo en modo *adaptador de red*
+
+Una vez hecho esto debemos iniciar la máquina y averiguamos la ip del nuevo adaptador. Una vez la conocemos probaremos con el comando dig en el equipo local:
+
+~~~
+dig @10.0.9.133 www.asircastelao.int
+~~~
+
+En este caso la IP que fue asignada es la 10.0.9.133. 
